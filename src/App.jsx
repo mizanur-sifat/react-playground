@@ -16,7 +16,7 @@ const App = () => {
     city: 'Dhaka'
   }
 
-  const ButtonClick = ()=> {
+  const ButtonClick = () => {
     alert("Alhamdulillah");
   }
 
@@ -58,6 +58,7 @@ const App = () => {
         {abroadCity.map((item, i) => <li key={i}> {item}</li>)}
       </ul>
 
+      <ContactForm />
 
     </div>
   );

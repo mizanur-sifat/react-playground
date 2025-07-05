@@ -1,13 +1,20 @@
 
 const ContactForm = () => {
+
+    const postFormData = (event) => {
+        event.preventDefault();
+        alert('Form Submitted without page reload');
+    }
+
     return (
         <div>
-            <input type="text" /> <br />
-            <button onClick={ ()=>alert("Form Submitted") }
-                style={
-                    {color:'red'}
-                }
-            >Submit</button> 
+            <hr />
+            <h4>Preventing form page reload for single page application</h4>
+            <form onSubmit={postFormData}>
+                <input type="text" placeholder="Name" />
+                <button type="submit">Submit</button>
+            </form>
+            <hr />
         </div>
     );
 };
