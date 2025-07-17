@@ -1,9 +1,17 @@
+import { useRef } from "react";
 import ContactForm from "./components/ContactForm";
 import DemoOne from "./components/DemoOne";
 import DemoTwo from "./components/DemoTwo";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import DemoForm from "./components/DemoForm";
+import MutableProperty from "./components/MutableProperty";
+import CachingbyUseRef from "./components/CachingbyUseRef";
+import UseState1 from "./components/UseState1";
+import ToDo_useState from "./components/ToDo_useState";
+import FormManageByuseState from "./components/FormManageByuseState";
+
 
 const App = () => {
   let marks = 79;
@@ -18,6 +26,15 @@ const App = () => {
 
   const ButtonClick = () => {
     alert("Alhamdulillah");
+  }
+
+  // myimg is linked to the img html tag
+  let myImg = useRef();
+  // change function is called after clicking the button and then execute the myImg manipulation
+  const change = () => {
+    myImg.current.src = "https://placehold.co/600x400?text=Hello+World";
+    myImg.current.setAttribute('height', '100px');
+    myImg.current.setAttribute('width', '150px');
   }
 
   return (
@@ -60,6 +77,23 @@ const App = () => {
 
       <ContactForm />
 
+      {/* Dom Manupulation using useRef */}
+      <img ref={myImg} src="https://placehold.co/400" alt="" />
+      <button onClick={change} >Click</button>
+
+      <hr />
+
+      <DemoForm />
+      <MutableProperty />
+      <hr />
+      <CachingbyUseRef />
+
+      <hr />
+      <UseState1/>
+      <hr />
+      <ToDo_useState/>
+      <hr />
+      <FormManageByuseState/>
     </div>
   );
 };
